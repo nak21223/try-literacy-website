@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY Literacy | Remote Remedial Instruction (Grades 3-8)</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic value -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        /* Set 'Inter' as the default font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --color-primary: #4f46e5; /* Indigo 600 */
+            --color-secondary: #0d9488; /* Teal 600 */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray Background */
+        }
+        .icon-bg {
+            background-color: var(--color-secondary);
+        }
+        .text-primary {
+            color: var(--color-primary);
+        }
+        .bg-primary-hover:hover {
+            background-color: #4338ca; /* Indigo 700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Brand Name -->
+            <div class="flex items-center space-x-2">
+                <!-- Educational Icon -->
+                <i data-lucide="graduation-cap" class="w-8 h-8 text-indigo-600"></i>
+                <h1 class="text-2xl font-extrabold text-gray-900">
+                    <span class="text-primary">TRY</span> Literacy
+                </h1>
+            </div>
+            <!-- CTA Button (Visible on Desktop) -->
+            <a href="#contact" class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
+                Book a Free Consultation
+            </a>
+            <!-- Mobile Menu Placeholder (simplified for single-file) -->
+            <a href="#services" class="md:hidden text-indigo-600 hover:text-indigo-800 transition duration-300 font-medium">Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="py-16 md:py-24 bg-gradient-to-br from-indigo-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-sm font-semibold uppercase tracking-wider text-teal-600 mb-3">Remote Remedial Instruction</p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                    Unlock Your Child's Potential in <span class="text-primary">Math & Reading</span>
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                    TRY Literacy provides focused, one-on-one virtual tutoring for elementary and middle school students (Grades 3 - 8) to master essential basic math and reading comprehension skills.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-xl shadow-lg text-white bg-indigo-600 bg-primary-hover transition duration-300 transform hover:scale-105">
+                        Start with a Free Consultation
+                    </a>
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3 border border-indigo-600 text-base font-medium rounded-xl shadow-md text-indigo-600 bg-white hover:bg-indigo-50 transition duration-300">
+                        Explore Our Programs
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Services Section -->
+        <section id="services" class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                        Targeted Instruction for Lasting Success
+                    </h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        We fill learning gaps with individualized, engaging, and remote instruction.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Reading Comprehension -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-teal-600">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full icon-bg text-white mb-4">
+                            <i data-lucide="book-open-text"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Reading Comprehension</h4>
+                        <p class="text-gray-600">
+                            We use evidence-based strategies to improve decoding, fluency, vocabulary, and the ability to understand and analyze complex texts.
+                        </p>
+                        <p class="mt-3 font-semibold text-sm text-teal-600">Grades 3 - 8 Focus</p>
+                    </div>
+
+                    <!-- Service Card 2: Basic Math Skills -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-indigo-600">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-600 text-white mb-4">
+                            <i data-lucide="calculator"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Basic Math Fluency</h4>
+                        <p class="text-gray-600">
+                            Building a solid foundation in arithmetic, fractions, decimals, and problem-solving to ensure confidence in higher-level math.
+                        </p>
+                        <p class="mt-3 font-semibold text-sm text-indigo-600">Grades 3 - 8 Focus</p>
+                    </div>
+
+                    <!-- Service Card 3: Remote & Flexible -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-t-4 border-gray-400">
+                        <div class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-600 text-white mb-4">
+                            <i data-lucide="laptop"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">100% Remote Instruction</h4>
+                        <p class="text-gray-600">
+                            Convenient, secure, and engaging virtual sessions mean quality instruction is delivered right to your home, fitting your schedule.
+                        </p>
+                        <p class="mt-3 font-semibold text-sm text-gray-600">Comfort and Flexibility</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The TRY Difference / Process Section -->
+        <section class="py-16 md:py-24 bg-indigo-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                        Our Step-by-Step Approach
+                    </h3>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        We don't just tutor; we build foundational confidence.
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <!-- Timeline/Step Container -->
+                    <div class="grid grid-cols-1 gap-10 md:grid-cols-3">
+                        <!-- Step 1 -->
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                            <span class="inline-flex items-center justify-center w-10 h-10 mb-4 rounded-full text-white bg-indigo-600 font-bold">1</span>
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Assessment</h4>
+                            <p class="text-gray-600">
+                                We start with a comprehensive, informal evaluation to pinpoint the student's specific learning gaps and strengths.
+                            </p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                            <span class="inline-flex items-center justify-center w-10 h-10 mb-4 rounded-full text-white bg-teal-600 font-bold">2</span>
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Custom Plan</h4>
+                            <p class="text-gray-600">
+                                A personalized, engaging learning plan is developed, focusing exclusively on the foundational skills needed for success.
+                            </p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="text-center p-6 bg-white rounded-xl shadow-md">
+                            <span class="inline-flex items-center justify-center w-10 h-10 mb-4 rounded-full text-white bg-indigo-600 font-bold">3</span>
+                            <h4 class="text-xl font-semibold text-gray-900 mb-2">Instruction & Growth</h4>
+                            <p class="text-gray-600">
+                                Remote, one-on-one sessions begin, tracking progress weekly and adapting the curriculum for optimal learning velocity.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Testimonials Section -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+                        What Parents Are Saying
+                    </h3>
+                    <p class="text-lg text-gray-600">
+                        Trust and results are the cornerstones of TRY Literacy.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+                        <i data-lucide="quote" class="w-8 h-8 text-teal-500 mb-4"></i>
+                        <blockquote class="text-gray-700 italic">
+                            "My daughter was struggling in 4th-grade math, and remote learning was a challenge. TRY Literacy quickly identified her fraction gaps and made the sessions fun. Her confidence—and her grades—are way up!"
+                        </blockquote>
+                        <div class="mt-4 text-sm font-semibold text-gray-900">
+                            — Sarah P., Parent of a 4th Grader
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-xl shadow-2xl border border-gray-100">
+                        <i data-lucide="quote" class="w-8 h-8 text-teal-500 mb-4"></i>
+                        <blockquote class="text-gray-700 italic">
+                            "The remote reading comprehension program was a game-changer for my 7th grader. The instruction was tailored perfectly, and now he tackles assigned readings with much less frustration. Highly recommend TRY Literacy."
+                        </blockquote>
+                        <div class="mt-4 text-sm font-semibold text-gray-900">
+                            — Michael W., Parent of a 7th Grader
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contact / Call-to-Action Section -->
+        <section id="contact" class="py-16 md:py-24 bg-primary text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                    <!-- Contact Info -->
+                    <div class="mb-10 lg:mb-0">
+                        <h3 class="text-4xl font-extrabold mb-4">
+                            Ready to See the Difference?
+                        </h3>
+                        <p class="text-indigo-200 text-lg mb-6">
+                            Schedule your free, no-obligation consultation today. Let's discuss your child's needs and how TRY Literacy can help.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="mail" class="w-6 h-6 text-teal-300"></i>
+                                <span class="font-medium">contact@tryliteracy.com (Placeholder Email)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="phone" class="w-6 h-6 text-teal-300"></i>
+                                <span class="font-medium">(555) 123-4567 (Placeholder Phone)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-teal-300"></i>
+                                <span class="font-medium">100% Remote & Virtual Services</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simple Contact Form (Placeholder - actual submission requires backend) -->
+                    <div class="bg-white p-8 rounded-xl shadow-2xl">
+                        <h4 class="text-2xl font-bold text-gray-900 mb-6">Request a Call Back</h4>
+                        <form onsubmit="event.preventDefault(); alert('Thank you! Your inquiry has been received. We will be in touch shortly.');" class="space-y-4">
+                            <div>
+                                <label for="parentName" class="block text-sm font-medium text-gray-700">Parent/Guardian Name</label>
+                                <input type="text" id="parentName" name="parentName" required
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email" name="email" required
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <div>
+                                <label for="grade" class="block text-sm font-medium text-gray-700">Child's Grade Level (3-8)</label>
+                                <input type="number" id="grade" name="grade" min="3" max="8" required
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            </div>
+                            <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-lg font-medium text-white bg-teal-600 hover:bg-teal-700 transition duration-300 transform hover:scale-[1.02]">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:flex md:justify-between md:items-center">
+            <div class="text-center md:text-left">
+                <p class="text-sm">&copy; 2024 TRY Literacy, LLC. All rights reserved.</p>
+                <p class="text-xs mt-1 text-gray-400">Remote Remedial Instruction for Grades 3-8.</p>
+            </div>
+            <div class="mt-4 md:mt-0 flex justify-center space-x-6">
+                <!-- Social Media Icons (Placeholders) -->
+                <a href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i data-lucide="instagram"></i></a>
+                <a href="mailto:contact@tryliteracy.com" class="text-gray-400 hover:text-white transition"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+        
+        // Simple JS to smooth scroll to anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
