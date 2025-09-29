@@ -304,7 +304,15 @@
                             </div>
                             <div class="flex items-center space-x-3">
                                 <i data-lucide="phone" class="w-6 h-6 text-teal-300"></i>
-                                <span class="font-medium">+(516) 268-1809 (Hours of operation: 1 pm - 7 pm Mon-Fri)</span>
+                                <span class="font-medium">+(516) 268-1809 (Hours of operation: 1pm 7 pm Mon-Fri)</span>
+                            </div>
+                            <!-- GOOGLE CLASSROOM LINK - Now protected by JS function -->
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-teal-300"></i>
+                                <!-- Note the href is "#" and it uses an ID for the JavaScript listener -->
+                                <a href="#" id="classroom-link" class="font-bold text-teal-300 hover:text-white transition underline">
+                                    Student Portal / Google Classroom Access
+                                </a>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <i data-lucide="map-pin" class="w-6 h-6 text-teal-300"></i>
@@ -359,12 +367,37 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-lg font-semibold mb-2"> COMPRISE HR LLC, DBA TRY Literacy</p>
+            <p class="text-lg font-semibold mb-2">TRY Literacy, LLC</p>
             <p class="text-sm text-gray-400">&copy; 2025 All rights reserved. Providing quality remote education since 2025.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu, Icon rendering, and FAQ Accordion -->
+    <!-- Password Modal UI -->
+    <div id="password-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 z-[100] flex items-center justify-center p-4" aria-modal="true" role="dialog">
+        <div class="bg-white rounded-xl p-8 max-w-sm w-full shadow-2xl">
+            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <i data-lucide="lock" class="w-6 h-6 text-accent mr-3"></i>
+                Student Portal Access
+            </h3>
+            <p class="text-gray-600 mb-6">Enter your password to access Google Classroom.</p>
+            
+            <input type="password" id="password-input" placeholder="Enter password here" 
+                   class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-accent focus:border-accent text-gray-900 mb-4">
+            
+            <p id="password-error" class="text-red-500 text-sm mb-4 hidden">Incorrect password. Please try again.</p>
+
+            <div class="flex space-x-3">
+                <button id="submit-password" class="flex-1 py-3 px-4 rounded-xl text-white bg-teal-600 hover:bg-teal-700 transition duration-300 font-semibold">
+                    Go to Classroom
+                </button>
+                <button id="cancel-password" class="py-3 px-4 rounded-xl text-gray-700 bg-gray-200 hover:bg-gray-300 transition duration-300 font-semibold">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Mobile Menu, Icon rendering, FAQ Accordion, and Password Modal -->
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
@@ -405,6 +438,69 @@
                     icon.classList.remove('rotate-180');
                 }
             });
+        });
+        
+        // --- Custom Password Modal Logic (Replaces alert/prompt) ---
+        const passwordModal = document.getElementById('password-modal');
+        const passwordInput = document.getElementById('password-input');
+        const submitButton = document.getElementById('submit-password');
+        const cancelButton = document.getElementById('cancel-password');
+        const errorDisplay = document.getElementById('password-error');
+        const classroomLink = document.getElementById('classroom-link');
+
+        /* * =========================================================================
+         * IMPORTANT: CHANGE THESE TWO VALUES IMMEDIATELY
+         * =========================================================================
+         */
+        // The URL is correct:
+        const CLASSROOM_URL = "https://classroom.google.com/c/NzEwOTUwNTgyODg3?cjc=n5ey545"; 
+        
+        // <<< CRITICAL: REPLACE "literacy123" with your desired password
+        const CORRECT_PASSWORD = "Literacy030608";           
+        
+        // Function to show the modal
+        function showPasswordModal(event) {
+            // Stop the default link action (navigating to '#')
+            event.preventDefault(); 
+            passwordModal.classList.remove('hidden');
+            passwordInput.focus();
+        }
+        
+        // Function to hide the modal and clear input/errors
+        function hidePasswordModal() {
+            passwordModal.classList.add('hidden');
+            passwordInput.value = '';
+            errorDisplay.classList.add('hidden');
+        }
+
+        // Function to handle password submission
+        function handlePasswordSubmit() {
+            const enteredPassword = passwordInput.value.trim();
+
+            if (enteredPassword === CORRECT_PASSWORD) {
+                hidePasswordModal();
+                // Open the classroom link in a new tab
+                window.open(CLASSROOM_URL, '_blank');
+            } else {
+                errorDisplay.classList.remove('hidden');
+                passwordInput.value = ''; // Clear input on failure
+                passwordInput.focus();
+            }
+        }
+
+        // Attach event listeners
+        if (classroomLink) {
+            classroomLink.addEventListener('click', showPasswordModal);
+        }
+        submitButton.addEventListener('click', handlePasswordSubmit);
+        cancelButton.addEventListener('click', hidePasswordModal);
+        
+        // Allow pressing Enter key to submit
+        passwordInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handlePasswordSubmit();
+            }
         });
     </script>
 </body>
